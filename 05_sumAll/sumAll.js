@@ -1,12 +1,20 @@
 const sumAll = function(firstParam,secondParam) {
     let paramTotal = 0
-    if (firstParam < secondParam) {
+if( (isNaN(firstParam)|| isNaN(secondParam))||(firstParam < 0 || secondParam < 0)||(typeof firstParam === "string")|| (typeof secondParam === "string")||(Number.isInteger(firstParam) == false)||Number.isInteger(secondParam) == false){return "ERROR";
+
+    }else if (((firstParam) < (secondParam)) ){
         for(let i = firstParam;i <= secondParam;i++) {
             paramTotal += i;
             
         };
         return paramTotal;
-    }else{return "ERROR"}
+    }else  {
+        for(let i = secondParam;i <= firstParam;i++) {
+            paramTotal += i;
+            
+        };
+        return paramTotal;
+    }
 
 };
 
